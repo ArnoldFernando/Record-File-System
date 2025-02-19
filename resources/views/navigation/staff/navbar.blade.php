@@ -11,8 +11,8 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item mx-0 mx-lg-1">
-                    <a class="nav-link py-3 px-0 px-lg-3 rounded {{ Route::is('test') ? 'active' : '' }}"
-                        href="{{ route('test') }}">File</a>
+                    <a class="nav-link py-3 px-0 px-lg-3 rounded {{ Route::is('staff.file.index') ? 'active' : '' }}"
+                        href="{{ route('staff.file.index') }}">File</a>
                 </li>
                 <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">About</a>
                 </li>

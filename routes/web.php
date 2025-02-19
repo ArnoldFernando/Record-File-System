@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\File\FileCategoryController;
 use App\Http\Controllers\File\FileController;
+use App\Http\Controllers\StaffFileController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -24,13 +25,16 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'auth'])->name('home');
 
-
+// admin routes
 Route::middleware(['auth', 'admin'])->group(function () {
     Route::resource('file', FileController::class);
     Route::resource('file-category', FileCategoryController::class);
     Route::get('/files/download/{id}', [FileController::class, 'downloadFile'])->name('files.download');
 });
 
-Route::middleware(['auth', 'staff'])->group(function () {
-    route::view('test', 'staff.file.index')->name('test');
+// staff routes
+Route::middleware(['auth', 'staff'])->prefix('staff')->name('staff.')->group(function () {
+    Route::resource('file', StaffFileController::class);
+    Route::get('/file/view/{id}', [StaffFileController::class, 'viewFile'])->name('file.view');
+    Route::get('/files/download/{id}', [StaffFileController::class, 'downloadFile'])->name('file.download');
 });

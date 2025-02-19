@@ -37,6 +37,18 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
     <script src="{{ asset('js/scripts.js') }}"></script>
+
+    <script>
+        // Simulate the browser's back button
+        function goBack() {
+            // Check if we can go back in the history
+            if (window.history.length > 1) {
+                window.history.back();
+            } else {
+                alert("No previous page in history.");
+            }
+        }
+    </script>
 </body>
 
 </html>
