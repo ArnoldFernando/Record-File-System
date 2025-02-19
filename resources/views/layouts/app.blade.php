@@ -19,13 +19,10 @@
 </head>
 
 <body>
-    <div> @extends('adminlte::page')
+    <div id="app">
+        @extends('adminlte::page')
 
-        {{--  @section('title', 'Dashboard')
 
-        @section('content_header')
-            <h1>Dashboard</h1>
-        @stop  --}}
 
         @section('content')
             <main class="py-4">
