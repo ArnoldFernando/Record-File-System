@@ -344,10 +344,16 @@ return [
             'icon' => 'fas fa-fw fa-user',
         ],
         [
-            'text' => 'Add File Category',
-            'url' => 'file/create',
-            'icon' => 'fas fa-fw fa-user',
+            'text' => 'File List ',
+            'url' => 'file',
+            'icon' => 'fas fa-fw fa-file',
         ],
+        [
+            'text' => 'Upload File ',
+            'url' => 'file/create',
+            'icon' => 'fas fa-fw fa-paper-plane',
+        ],
+
 
         [
             'text' => 'Files',
