@@ -28,6 +28,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'auth'])->name(
 Route::middleware(['auth', 'admin'])->group(function () {
     Route::resource('file', FileController::class);
     Route::resource('file-category', FileCategoryController::class);
+    Route::get('/files/download/{id}', [FileController::class, 'downloadFile'])->name('files.download');
 });
 
 Route::middleware(['auth', 'staff'])->group(function () {
