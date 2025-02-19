@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\File\FileCategoryController;
+use App\Http\Controllers\File\FileController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,4 +22,14 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'auth'])->name('home');
+
+
+Route::middleware(['auth', 'admin'])->group(function () {
+    Route::resource('file', FileController::class);
+    Route::resource('file-category', FileCategoryController::class);
+});
+
+Route::middleware(['auth', 'staff'])->group(function () {
+    route::view('test', 'staff.file.index')->name('test');
+});
