@@ -330,7 +330,22 @@ return [
         ['header' => 'account_settings'],
         [
             'text' => 'Dashboard',
-            'url' => '#',
+            'url' => '/home',
+            'icon' => 'fas fa-fw fa-user',
+        ],
+        [
+            'text' => 'File Category List',
+            'url' => 'file-category',
+            'icon' => 'fas fa-fw fa-user',
+        ],
+        [
+            'text' => 'Add File Category',
+            'url' => 'file-category/create',
+            'icon' => 'fas fa-fw fa-user',
+        ],
+        [
+            'text' => 'Add File Category',
+            'url' => 'file/create',
             'icon' => 'fas fa-fw fa-user',
         ],
 
