@@ -28,7 +28,7 @@
 <body class="font">
 
     <div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
-        <div class="bg-success p-3 rounded-3" style="width: 35vw; height: 72vh;">
+        <div class="bg-success p-3" style="width: 35vw; height: 72vh; border-radius: 150px 15px">
             <div class="d-flex justify-content-center align-items-center mt-2">
                 <img src="{{ asset('assets/img/denr-logo.jpg') }}" class="rounded-circle shadow-lg" alt="logo"
                     width="60" height="60">
