@@ -25,27 +25,13 @@
     @stop
 
     @section('content_header')
-        <h5 class="fw-semibold text-md">Add File Category</h5>
+        <h5 class="fw-semibold text-md">Example</h5>
         <hr class="mt-0">
     @stop
 
     @section('content')
         <div class="container-fluid">
-            <form action="{{ route('file-category.store') }}" method="POST" enctype="multipart/form-data"
-                class="container mt-5">
-                @csrf
-                <div class="mb-3">
-                    <label for="name" class="form-label">Category Name:</label>
-                    <input type="text" id="name" name="name" class="form-control" required>
-                </div>
-                <div class="mb-3">
-                    <label for="description" class="form-label">Description:</label>
-                    <textarea id="description" name="description" class="form-control" rows="3" required></textarea>
-                </div>
-                <div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </div>
-            </form>
+
         </div>
     @endsection
     @section('js')
