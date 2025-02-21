@@ -57,7 +57,6 @@ class FileController extends Controller
             'file' => $filePath,
             'civil_case_number' => $request->civil_case_number,
             'lot_number' => $request->lot_number,
-            'path' => $request->path,
             'status' => $request->status,
             'file_category_id' => $request->file_category_id,
             'user_id' => auth()->id(),

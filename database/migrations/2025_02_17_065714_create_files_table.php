@@ -19,7 +19,6 @@ return new class extends Migration
             $table->text('file');
             $table->string('civil_case_number');
             $table->string('lot_number');
-            $table->string('path');
             $table->enum('status', ['pending', 'approved', 'rejected', 'deleted'])->default('pending');
             $table->foreignId('file_category_id')->constrained();
             $table->foreignId('user_id')->constrained();

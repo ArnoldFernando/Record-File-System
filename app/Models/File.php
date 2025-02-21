@@ -16,7 +16,6 @@ class File extends Model
         'file',
         'civil_case_number',
         'lot_number',
-        'path',
         'status',
         'file_category_id',
         'user_id',

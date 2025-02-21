@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\File\FileCategoryController;
 use App\Http\Controllers\File\FileController;
+use App\Http\Controllers\FileStatusController;
 use App\Http\Controllers\StaffFileController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -18,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('login');
 });
 
 Auth::routes();
@@ -37,4 +38,8 @@ Route::middleware(['auth', 'staff'])->prefix('staff')->name('staff.')->group(fun
     Route::resource('file', StaffFileController::class);
     Route::get('/file/view/{id}', [StaffFileController::class, 'viewFile'])->name('file.view');
     Route::get('/files/download/{id}', [StaffFileController::class, 'downloadFile'])->name('file.download');
+
+    Route::get('/files/status/{status}', [FileStatusController::class, 'index'])
+        ->whereIn('status', ['pending', 'approved', 'rejected', 'deleted'])
+        ->name('files.status');
 });
