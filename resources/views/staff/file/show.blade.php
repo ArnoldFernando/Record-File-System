@@ -25,8 +25,7 @@
                 @endforeach
             </tbody>
         </table>
-        <button onclick="goBack()">Go Back</button>
-
+        <button onclick="goBack()" class="btn btn-secondary mt-3">Go Back</button>
     </div>
 
 

@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>@yield('title', 'Freelancer - Start Bootstrap Theme')</title>
+    <title>@yield('title', 'Record File System')</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="{{ asset('assets/favicon.ico') }}" />
     <!-- Font Awesome icons (free version)-->
@@ -24,7 +24,7 @@
     @include('navigation.staff.navbar')
 
     <!-- Main content area -->
-    <div style="padding:200px;">
+    <div style="padding: 120px;">
         <main class="p-4">
             {{ $slot }}
         </main>

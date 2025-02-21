@@ -7,12 +7,12 @@
 
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">{{ $file->file_name }}</h5>
+                <p class="card-text"><strong>Name:</strong> {{ $file->file_name }}</p>
+
                 <p class="card-text"><strong>Location:</strong> {{ $file->location }}</p>
                 <p class="card-text"><strong>Description:</strong> {{ $file->description }}</p>
                 <p class="card-text"><strong>Civil Case Number:</strong> {{ $file->civil_case_number }}</p>
                 <p class="card-text"><strong>Lot Number:</strong> {{ $file->lot_number }}</p>
-                <p class="card-text"><strong>Path:</strong> {{ $file->path }}</p>
                 <p class="card-text"><strong>Status:</strong> <span
                         class="badge bg-primary">{{ ucfirst($file->status) }}</span></p>
                 <p class="card-text"><strong>Uploaded By:</strong> {{ $file->user->name }}</p>
@@ -20,11 +20,11 @@
                 <p class="card-text"><strong>Uploaded At:</strong> {{ $file->created_at->format('F d, Y h:i A') }}</p>
 
                 @if ($file->file)
-                    <p><strong>File:</strong></p>
+                    <span><strong>File:</strong></span>
                     <a href="{{ route('files.download', $file->id) }}" class="btn btn-success">Download</a>
                 @endif
 
-                <a href="{{ route('file.edit', $file->id) }}" class="btn btn-warning mt-3">Edit</a>
+                <a href="{{ route('file.edit', $file->id) }}" class="btn btn-warning ">Edit</a>
 
                 <form action="{{ route('file.destroy', $file->id) }}" method="POST" class="d-inline-block mt-3">
                     @csrf

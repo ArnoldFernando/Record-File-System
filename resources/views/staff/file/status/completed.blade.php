@@ -21,22 +21,15 @@
             <tr>
                 <th>File:</th>
                 <td>
-                    @if ($file->file && file_exists(storage_path('app/public/' . $file->file)))
+                    @if ($file->path)
                         <a href="{{ route('staff.file.download', $file->id) }}" class="btn btn-success">Download</a>
-                    @else
-                        No file available
-                    @endif
+                </td>
+            @else
+                No file available
+                @endif
                 </td>
             </tr>
         </table>
 
         <button onclick="goBack()" class="btn btn-secondary mt-3">Go Back</button>
-
-
-
-
-
-    </div>
-
-
 </x-staff-layout>

@@ -58,11 +58,9 @@
                     value="{{ old('lot_number', $file->lot_number) }}" required>
             </div>
 
-            <div class="mb-3">
-                <label for="path" class="form-label">Path</label>
-                <input type="text" name="path" id="path" class="form-control"
-                    value="{{ old('path', $file->path) }}" required>
-            </div>
+
+
+
 
             <div class="mb-3">
                 <label for="status" class="form-label">Status</label>

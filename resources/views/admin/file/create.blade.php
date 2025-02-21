@@ -60,33 +60,25 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-6 col-12">
+                    <div class="col-md-6 col-6">
                         <div class="mb-3">
-                            <label for="file" class="form-label">Upload File</label>
+                            <label for="file" class="form-label">Upload Filess</label>
                             <input type="file" name="file" id="file" class="form-control" required>
                         </div>
                     </div>
-                    <div class="col-md-6 col-12">
+                    <div class="col-md-3 col-3">
                         <div class="mb-3">
                             <label for="civil_case_number" class="form-label">Civil Case Number</label>
                             <input type="text" name="civil_case_number" id="civil_case_number" class="form-control"
                                 value="{{ old('civil_case_number') }}" required>
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6 col-12">
+
+                    <div class="col-md-3 col-3">
                         <div class="mb-3">
                             <label for="lot_number" class="form-label">Lot Number</label>
                             <input type="text" name="lot_number" id="lot_number" class="form-control"
                                 value="{{ old('lot_number') }}" required>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-12">
-                        <div class="mb-3">
-                            <label for="path" class="form-label">Path</label>
-                            <input type="text" name="path" id="path" class="form-control"
-                                value="{{ old('path') }}" required>
                         </div>
                     </div>
                 </div>
