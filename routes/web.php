@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\File\AllFileController;
 use App\Http\Controllers\File\FileCategoryController;
 use App\Http\Controllers\File\FileController;
 use App\Http\Controllers\FileStatusController;
@@ -27,9 +28,12 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'auth'])->name('home');
 
 // admin routes
-Route::middleware(['auth', 'admin'])->group(function () {
+Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
     Route::resource('file', FileController::class);
     Route::resource('file-category', FileCategoryController::class);
+    Route::resource('all-file', AllFileController::class);
+    Route::get('all-file/view/{id}', [AllFileController::class, 'viewFile'])->name('all-file.view');
+
     Route::get('/files/download/{id}', [FileController::class, 'downloadFile'])->name('files.download');
 });
 

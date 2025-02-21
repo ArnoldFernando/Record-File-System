@@ -20,7 +20,7 @@ class FileSeeder extends Seeder
         $categories = FileCategory::all();
         $users = User::all();
 
-        foreach (range(1, 20) as $index) {
+        foreach (range(1, 500) as $index) {
             File::create([
                 'file_name' => 'File ' . $index,
                 'location' => 'Location ' . $index,

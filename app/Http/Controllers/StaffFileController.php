@@ -19,9 +19,9 @@ class StaffFileController extends Controller
     public function show($id)
     {
         $category = FileCategory::findOrFail($id);
-        $files = File::where('file_category_id', $id)->get();
-
-        return view('staff.file.show', compact('category', 'files'));
+        $files = File::where('file_category_id', $id)->orderBy('created_at')->get();
+        $statuses = ['Pending', 'Approved', 'Rejected'];
+        return view('staff.file.show', compact('category', 'files', 'statuses'));
     }
 
     public function viewFile($id)

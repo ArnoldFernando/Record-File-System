@@ -334,23 +334,28 @@ return [
             'icon' => 'fas fa-fw fa-user',
         ],
         [
+            'text' => 'AllFiles',
+            'url' => 'admin/all-file',
+            'icon' => 'fas fa-fw fa-user',
+        ],
+        [
             'text' => 'File Category List',
-            'url' => 'file-category',
+            'url' => 'admin/file-category',
             'icon' => 'fas fa-fw fa-file',
         ],
         [
             'text' => 'Add File Category',
-            'url' => 'file-category/create',
+            'url' => 'admin/file-category/create',
             'icon' => 'fas fa-fw fa-file',
         ],
         [
             'text' => 'File List ',
-            'url' => 'file',
+            'url' => 'admin/file',
             'icon' => 'fas fa-fw fa-file',
         ],
         [
             'text' => 'Upload File ',
-            'url' => 'file/create',
+            'url' => 'admin/file/create',
             'icon' => 'fas fa-fw fa-paper-plane',
         ],
 
