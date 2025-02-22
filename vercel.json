@@ -1,14 +1,14 @@
 {
     "version": 2,
     "builds": [{
-        "src": "public/index.php",
+        "src": "api/index.php",
         "use": "@vercel/php",
         "config": {
-            "installCommand": "curl -sS https://getcomposer.org/installer | php && php composer.phar install"
+            "installCommand": "curl -sS https://getcomposer.org/installer | php && php composer.phar install --optimize-autoloader --no-dev"
         }
     }],
     "routes": [{
         "src": "/(.*)",
-        "dest": "public/index.php"
+        "dest": "api/index.php"
     }]
 }
