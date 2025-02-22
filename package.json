@@ -3,11 +3,9 @@
     "type": "commonjs",
     "scripts": {
         "dev": "npm run development",
-        "development": "mix",
-        "watch": "mix watch",
-        "hot": "mix watch --hot",
+        "development": "echo 'No build step required'",
         "prod": "npm run production",
-        "production": "mix --production"
+        "production": "echo 'No build step required'"
     },
     "devDependencies": {
         "@babel/core": "^7.26.9",
@@ -16,8 +14,6 @@
         "axios": "^1.6.4",
         "babel-loader": "^9.2.1",
         "bootstrap": "^5.3.3",
-        "cross-env": "^7.0.3",
-        "laravel-mix": "^6.0.49",
         "resolve-url-loader": "^5.0.0",
         "sass": "^1.85.0",
         "sass-embedded": "^1.85.0",

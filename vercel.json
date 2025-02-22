@@ -2,13 +2,13 @@
     "version": 2,
     "builds": [{
         "src": "public/index.php",
-        "use": "@vercel/php",
-        "config": {
-            "composer": true
-        }
+        "use": "@vercel/php"
     }],
     "routes": [{
         "src": "/(.*)",
         "dest": "public/index.php"
-    }]
+    }],
+    "installCommand": "composer install --optimize-autoloader --no-dev",
+    "buildCommand": "php artisan key:generate && php artisan optimize",
+    "outputDirectory": "public"
 }
