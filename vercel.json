@@ -4,7 +4,7 @@
         "src": "api/index.php",
         "use": "@vercel/php",
         "config": {
-            "installCommand": "curl -sS https://getcomposer.org/installer | php && php composer.phar install --optimize-autoloader --no-dev"
+            "installCommand": "curl -sS https://getcomposer.org/installer | php && php composer.phar install --ignore-platform-reqs --no-dev --prefer-dist --optimize-autoloader"
         }
     }],
     "routes": [{
