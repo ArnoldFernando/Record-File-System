@@ -8,7 +8,7 @@
         "src": "/(.*)",
         "dest": "public/index.php"
     }],
-    "installCommand": "curl -s https://getcomposer.org/installer | php && php composer.phar install --optimize-autoloader --no-dev",
+    "installCommand": "curl -sS https://getcomposer.org/installer | php && php composer.phar install --optimize-autoloader --no-dev",
     "buildCommand": "php artisan key:generate && php artisan optimize",
     "outputDirectory": "public"
 }
