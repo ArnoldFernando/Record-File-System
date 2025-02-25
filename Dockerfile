@@ -58,8 +58,10 @@ RUN sed -ri -e 's!/var/www/!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/apache2.conf
 # Expose port 80 for Apache
 EXPOSE 80
 
+# Check if apache2ctl and apache2 exist in the container
+RUN which apache2ctl && apache2ctl -v
+RUN which apache2 && apache2 -v
+RUN ls -al /usr/sbin
+
 # Start Apache in the foreground
-CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
-
-
-# End of Dockerfile
+CMD ["apache2ctl", "-D", "FOREGROUND"]
