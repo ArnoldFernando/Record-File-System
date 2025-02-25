@@ -59,6 +59,7 @@ RUN sed -ri -e 's!/var/www/!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/apache2.conf
 EXPOSE 80
 
 # Start Apache in the foreground
-CMD ["apache2-foreground"]
+CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
+
 
 # End of Dockerfile
