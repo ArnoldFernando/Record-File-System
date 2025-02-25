@@ -34,6 +34,9 @@ RUN apt-get update && apt-get install -y \
 # Enable Apache mod_rewrite for Laravel's pretty URLs
 RUN a2enmod rewrite
 
+# Create a symlink for PHP in /usr/bin
+RUN ln -s /usr/local/bin/php /usr/bin/php
+
 # Copy application files from the first stage
 COPY --from=deps /app /var/www/html
 
