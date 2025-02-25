@@ -30,23 +30,38 @@
     @stop
 
     @section('content')
-        <div class="container-fluid">
-            <form action="{{ route('file-category.store') }}" method="POST" enctype="multipart/form-data"
-                class="container mt-5">
-                @csrf
-                <div class="mb-3">
-                    <label for="name" class="form-label">Category Name:</label>
-                    <input type="text" id="name" name="name" class="form-control" required>
+        <div class="container-fluid mt-3">
+            <div class="row">
+                <div class="col-8">
+                    <form action="{{ route('file-category.store') }}" method="POST" enctype="multipart/form-data"
+                        class="container">
+                        @csrf
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Category Name:</label>
+                            <input type="text" id="name" name="name" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="description" class="form-label">Description:</label>
+                            <textarea id="description" name="description" class="form-control" rows="3" required></textarea>
+                        </div>
+                        <div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
                 </div>
-                <div class="mb-3">
-                    <label for="description" class="form-label">Description:</label>
-                    <textarea id="description" name="description" class="form-control" rows="3" required></textarea>
+
+                <div class="col-4">
+                    <h5 class="fw-semibold text-md">List of Present File Categories</h5>
+                    <ul class="list-group mt-3">
+                        @foreach ($filecategories as $category)
+                            <li class="list-group-item">{{ $category->name }}</li>
+                        @endforeach
+                    </ul>
                 </div>
-                <div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </div>
-            </form>
+
+            </div>
         </div>
+
     @endsection
     @section('js')
         {{-- Js Script --}}

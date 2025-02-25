@@ -22,7 +22,7 @@
                 <th>File:</th>
                 <td>
                     @if ($file->file && file_exists(storage_path('app/public/' . $file->file)))
-                        <a href="{{ route('admin.files.download', $file->id) }}" class="btn btn-success">Download</a>
+                        <a href="{{ route('files.download', $file->id) }}" class="btn btn-success">Download</a>
                     @else
                         No file available
                     @endif

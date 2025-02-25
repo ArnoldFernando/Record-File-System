@@ -344,11 +344,6 @@ return [
             'icon' => 'fas fa-fw fa-file',
         ],
         [
-            'text' => 'Add File Category',
-            'url' => 'admin/file-category/create',
-            'icon' => 'fas fa-fw fa-file',
-        ],
-        [
             'text' => 'File List ',
             'url' => 'admin/file',
             'icon' => 'fas fa-fw fa-file',

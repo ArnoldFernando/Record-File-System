@@ -29,6 +29,7 @@
                         <th>Location</th>
                         <th>Status</th>
                         <th>Action</th>
+                        <th>Process</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -40,6 +41,20 @@
                             <td class="file-status">{{ $file->status }}</td>
                             <td>
                                 <a href="{{ route('all-file.view', $file->id) }}" class="btn btn-primary">View</a>
+                            </td>
+                            <td>
+                                <form action="{{ route('file.update-status', $file->id) }}" method="POST"
+                                    style="display:inline;">
+                                    @csrf
+                                    <select name="status" class="form-select" onchange="this.form.submit()">
+                                        <option value="pending" {{ $file->status == 'Pending' ? 'selected' : '' }}>
+                                            Pending</option>
+                                        <option value="rejected" {{ $file->status == 'rejected' ? 'selected' : '' }}>
+                                            Rejected</option>
+                                        <option value="approved" {{ $file->status == 'approved' ? 'selected' : '' }}>
+                                            Approved</option>
+                                    </select>
+                                </form>
                             </td>
                         </tr>
                     @endforeach

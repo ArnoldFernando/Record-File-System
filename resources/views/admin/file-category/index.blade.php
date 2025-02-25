@@ -31,6 +31,9 @@
 
     @section('content')
         <div class="container-fluid">
+            <div class="d-flex justify-content-end mb-3">
+                <a href="{{ route('file-category.create') }}" class="btn btn-success">Add New Category</a>
+            </div>
             <table class="table table-bordered table-striped" id="myTable">
                 <thead>
                     <tr>

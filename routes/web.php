@@ -3,6 +3,7 @@
 use App\Http\Controllers\File\AllFileController;
 use App\Http\Controllers\File\FileCategoryController;
 use App\Http\Controllers\File\FileController;
+use App\Http\Controllers\File\ProcessFileController;
 use App\Http\Controllers\FileStatusController;
 use App\Http\Controllers\StaffFileController;
 use Illuminate\Support\Facades\Auth;
@@ -35,6 +36,8 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
     Route::get('all-file/view/{id}', [AllFileController::class, 'viewFile'])->name('all-file.view');
 
     Route::get('/files/download/{id}', [FileController::class, 'downloadFile'])->name('files.download');
+
+    Route::post('/file/update-status/{fileId}', [ProcessFileController::class, 'updateStatus'])->name('file.update-status');
 });
 
 // staff routes

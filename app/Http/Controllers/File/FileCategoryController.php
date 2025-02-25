@@ -23,7 +23,9 @@ class FileCategoryController extends Controller
     public function create()
     {
         //
-        return view('admin.file-category.create');
+        $filecategories = FileCategory::all();
+
+        return view('admin.file-category.create', compact('filecategories'));
     }
 
     /**
